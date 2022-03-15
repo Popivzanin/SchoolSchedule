@@ -6,12 +6,22 @@ set(CMAKE_CXX_STANDARD 11)
 add_library(crud-lib
         src/controller/StaticController.hpp
         src/controller/UserController.hpp
+
+        src/controller/ScheduleController.hpp
+
         src/db/UserDb.hpp
         src/dto/PageDto.hpp
         src/dto/StatusDto.hpp
         src/dto/UserDto.hpp
+
+        src/dto/ScheduleDto.hpp
+
         src/service/UserService.cpp
         src/service/UserService.hpp
+
+        src/service/ScheduleService.hpp
+        src/service/ScheduleService.cpp
+
         src/AppComponent.hpp
         src/DatabaseComponent.hpp
         src/SwaggerComponent.hpp
@@ -46,7 +56,8 @@ target_link_libraries(${project_name}-lib ${CONAN_LIBS})
 
 add_definitions(
         ## define path to swagger-ui static resources folder
-        -DOATPP_SWAGGER_RES_PATH="${oatpp-swagger_INCLUDE_DIRS}/../bin/oatpp-swagger/res"
+#        -DOATPP_SWAGGER_RES_PATH="${oatpp-swagger_INCLUDE_DIRS}/../bin/oatpp-swagger/res"
+        -DOATPP_SWAGGER_RES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/swagger"
 
         ## SQLite database file
         -DDATABASE_FILE="${CMAKE_CURRENT_SOURCE_DIR}/db.sqlite"

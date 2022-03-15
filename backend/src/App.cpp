@@ -1,6 +1,7 @@
 
 #include "AppComponent.hpp"
 
+#include "controller/ScheduleController.hpp"
 #include "controller/UserController.hpp"
 #include "controller/StaticController.hpp"
 
@@ -20,6 +21,7 @@ void run() {
   oatpp::web::server::api::Endpoints docEndpoints;
 
   docEndpoints.append(router->addController(UserController::createShared())->getEndpoints());
+  docEndpoints.append(router->addController(ScheduleController::createShared())->getEndpoints());
 
   router->addController(oatpp::swagger::Controller::createShared(docEndpoints));
   router->addController(StaticController::createShared());

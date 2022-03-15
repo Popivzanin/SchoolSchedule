@@ -21,10 +21,10 @@ public:
     oatpp::swagger::DocumentInfo::Builder builder;
     
     builder
-    .setTitle("User entity service")
+    .setTitle("School Schedule Service")
     .setDescription("CRUD API Example project with swagger docs")
     .setVersion("1.0")
-    .setContactName("Ivan Ovsyanochka")
+    .setContactName("Dmitriy Zanin")
     .setContactUrl("https://oatpp.io/")
     
     .setLicenseName("Apache License, Version 2.0")
@@ -42,8 +42,8 @@ public:
    */
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::swagger::Resources>, swaggerResources)([] {
     // Make sure to specify correct full path to oatpp-swagger/res folder !!!
-//    return oatpp::swagger::Resources::loadResources(OATPP_SWAGGER_RES_PATH);
-    return oatpp::swagger::Resources::loadResources("swagger");
+    return oatpp::swagger::Resources::loadResources(OATPP_SWAGGER_RES_PATH);
+//    return oatpp::swagger::Resources::loadResources("swagger");
   }());
   
 };

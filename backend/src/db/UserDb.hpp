@@ -57,6 +57,8 @@ public:
         "DELETE FROM AppUser WHERE id=:id;",
         PARAM(oatpp::Int32, id))
 
+  QUERY(getAllSchedule,"SELECT * FROM Schedule")
+
 };
 
 #include OATPP_CODEGEN_END(DbClient) //<- End Codegen
