@@ -1,5 +1,11 @@
+/**
+ * \file Файл сервиса "Расписание"
+ */
 #include "ScheduleService.hpp"
-
+/**
+ * \brief Метод, делающий запрос в БД и создающий объект ответа на запрос
+ * \return Структура ответа с вложенной структурой расписания
+ */
 oatpp::Object<PageDto<oatpp::Object<ScheduleDto>>> ScheduleService::getAllSchedule() {
 
   auto dbResult = m_database->getAllSchedule();

@@ -1,3 +1,6 @@
+/**
+ * Файл со Объектом "Расписание"
+ */
 #ifndef ScheduleDto_hpp
 #define ScheduleDto_hpp
 
@@ -6,6 +9,9 @@
 
 #include OATPP_CODEGEN_BEGIN(DTO)
 
+/**
+ * Стуктура отображающая объект "Расписание", повторяет поля в БД
+ */
 class ScheduleDto : public oatpp::DTO {
   
   DTO_INIT(ScheduleDto, DTO)

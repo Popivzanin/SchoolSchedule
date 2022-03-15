@@ -1,4 +1,6 @@
-
+/**
+ * \file Стрктуры ответа, с вложенностью для списков объектов
+ */
 #ifndef CRUD_PAGEDTO_HPP
 #define CRUD_PAGEDTO_HPP
 
@@ -6,6 +8,10 @@
 #include "ScheduleDto.hpp"
 
 #include OATPP_CODEGEN_BEGIN(DTO)
+
+/**
+ * \brief Общая структура ответа для списка объектов
+ */
 
 template<class T>
 class PageDto : public oatpp::DTO {

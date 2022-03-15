@@ -1,4 +1,6 @@
-
+/**
+ * \file Файл с подключением БД к серверу
+ */
 #ifndef CRUD_DATABASECOMPONENT_HPP
 #define CRUD_DATABASECOMPONENT_HPP
 

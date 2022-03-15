@@ -1,4 +1,7 @@
 
+/**
+ * \file Файл контроллера расписаний
+ */
 #ifndef ScheduleController_hpp
 #define ScheduleController_hpp
 
@@ -11,7 +14,8 @@
 #include OATPP_CODEGEN_BEGIN(ApiController) //<- Begin Codegen
 
 /**
- * User REST controller.
+ * \brief Schedule REST controller.
+ * \details REST контроллер расписаний. Задает эндпоинты сервера, задает CORS политику и документирует себя через Swagger
  */
 class ScheduleController : public oatpp::web::server::api::ApiController {
 public:
@@ -19,11 +23,12 @@ public:
     : oatpp::web::server::api::ApiController(objectMapper)
   {}
 private:
-  ScheduleService m_scheduleService; // Create user service.
+
+  ScheduleService m_scheduleService;
 public:
 
   static std::shared_ptr<ScheduleController> createShared(
-    OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper) // Inject objectMapper component here as default parameter
+    OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper)
   ){
     return std::make_shared<ScheduleController>(objectMapper);
   }

@@ -1,4 +1,6 @@
-
+/**
+ * Файл с настройкой компонента генерации документации
+ */
 #ifndef SwaggerComponent_hpp
 #define SwaggerComponent_hpp
 

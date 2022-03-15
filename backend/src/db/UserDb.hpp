@@ -1,4 +1,6 @@
-
+/**
+ * \file Файл описания взаимодействия с БД
+ */
 #ifndef CRUD_USERDB_HPP
 #define CRUD_USERDB_HPP
 
@@ -8,7 +10,7 @@
 #include OATPP_CODEGEN_BEGIN(DbClient) //<- Begin Codegen
 
 /**
- * UserDb client definitions.
+ * \brief В классе содержатся методы, выполняющие SQL запросы. По своей сути является моделью
  */
 class UserDb : public oatpp::orm::DbClient {
 public:
