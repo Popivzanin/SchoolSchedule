@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.1)
-project(crud)
+set(project_name SchoolSchedule)
+project(${project_name})
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(crud-lib
+add_library(${project_name}-lib
         src/controller/StaticController.hpp
         src/controller/UserController.hpp
 
@@ -29,8 +30,7 @@ add_library(crud-lib
         src/ErrorHandler.hpp)
 
 ## include directories
-set(project_name crud)
-target_include_directories(crud-lib PUBLIC src)
+target_include_directories(${project_name}-lib PUBLIC src)
 #--------------------------------------------------------------------------------------------------
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
     message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
@@ -70,13 +70,16 @@ add_definitions(
 
 if(CMAKE_SYSTEM_NAME MATCHES Linux)
     find_package(Threads REQUIRED)
-    target_link_libraries(crud-lib INTERFACE Threads::Threads ${CMAKE_DL_LIBS})
+    target_link_libraries(${project_name}-lib INTERFACE Threads::Threads ${CMAKE_DL_LIBS})
 endif()
 
 ## add executables
 
-add_executable(crud-exe src/App.cpp)
-target_link_libraries(crud-exe crud-lib)
+add_executable(${project_name}-exe src/App.cpp)
+target_link_libraries(${project_name}-exe ${project_name}-lib)
+
+install(TARGETS ${project_name}-exe DESTINATION ${project_name})
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/../frontend/dist/ DESTINATION ${project_name}/view)
 
 #add_executable(crud-test
 #        test/tests.cpp
